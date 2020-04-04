@@ -10,11 +10,13 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+
 <body>
   <div class="container">
     <header>
       <h1 class="title center">Explore Space!</h1>
     </header>
+
     <section class="section">
       <div class="card" id="hello">
         <h4>Hello! What's your name?</h4>
@@ -23,21 +25,30 @@
       </div>
     </section>
     <section class="section">
-      <div class="card">
+      <div class="card is-invisible">
         <h4 id="welcomeMessage"></h4>
       </div>
-    </section>
-    <section class="section">
-      <!--Space Picture-->
-      <div class="card inv">
-        <div class="form">
-          <input type="date" id="picDate" min="1995-06-20" max="" />
-          <button id="picSearchBtn" type="button">Show me Some Space</button>
+
+      <section class="section">
+        <div class="card is-invisible">
+          <h4>There are currently blank people in space</h4>
+        </div>
+      </section>
+
+      <section class="section">
+        <!--Space Picture-->
+        <div class="card is-invisible">
+          <div class="form">
+            <input type="date" id="picDate" min="1995-06-20" max="" />
+            <button id="picSearchBtn" type="button">Show me Some Space</button>
+          </div>
+          <!--Daily Picture-->
+          <img alt="space picture" />
         </div>
         <!--Daily Picture-->
         <img alt="space picture" />
-      </div>
-    </section>
+  </div>
+  </section>
   </div>
 
   <!--jQuery, moment.js and script.js-->
