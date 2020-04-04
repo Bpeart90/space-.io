@@ -9,10 +9,14 @@ $("#userNameBtn").on("click", function () {
     var id = "userName"
     var value = userName
     localStorage.setItem(id, value);
+    loadPage()
 }
 )
 
 if (userName !== null) {
+    loadPage()
+}
+function loadPage() {
     console.log(userName)
     $(".is-invisible").removeClass("is-invisible")
     $("#hello").addClass("is-invisible")
@@ -21,7 +25,6 @@ if (userName !== null) {
         $("#welcomeMessage").text("Welcome, " + userName + "! There are currently " + people + " people in space! Wow!")
     })
 }
-
 //calendar functionality; gets today's date on page load
 var today = getToday()
 function getToday() {
