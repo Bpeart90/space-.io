@@ -1,1 +1,27 @@
 /*This a starting template for this project*/
+.card {
+  align-content: center;
+  background-color: white;
+}
+body {
+  background-image: url("stars.jpg");
+  background-repeat: repeat;
+  background-position: top center !important;
+  background-size: 400px;
+  background-attachment: fixed;
+}
+
+.container {
+    background-color: black;
+    max-width: 960px;
+}
+
+.card {
+    color: white;
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
