@@ -19,7 +19,7 @@ if (userName !== null) {
 function loadPage() {
     console.log(userName)
     $(".is-invisible").removeClass("is-invisible")
-    $("#hello").addClass("is-invisible")
+    $("#hello").addClass("is-hidden")
     $.getJSON('http://api.open-notify.org/astros.json', function (data) {
         var people = data['number']
         $("#welcomeMessage").text("Welcome, " + userName + "! There are currently " + people + " people in space! Wow!")
