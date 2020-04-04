@@ -2,25 +2,18 @@
 console.log("hey lmao")
 
 var userName = localStorage.getItem(userName);
-var picDate = $("#picDate").val()
 
-if (picDate === null) {
-    $("#today").valueAsDate = new Date();
+//calendar functionality; gets today's date on page load
+var today = getToday()
+function getToday() {
+    today = moment().format();
+    picDate = today.slice(0, 10)
+    $("#picDate").val(picDate)
+    $("#picDate").attr("max", picDate)
+    console.log(picDate)
 }
-
+//image search; today is set as max date
 $("#picSearchBtn").on("click", function () {
-
-})
-
-$(document).on('keypress', function (e) {
-    if (userName = null) {
-        if (e.which == 13) {
-            alert('You pressed enter!');
-        }
-
-        $("#9amText").each(function () {
-            var value = $(this).val();
-            localStorage.setItem(userName, value);
-        });
-    }
+    picDate = $("#picDate").val()
+    console.log(picDate)
 })
