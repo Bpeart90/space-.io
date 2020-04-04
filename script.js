@@ -11,7 +11,7 @@ if (userName === null) {
 } else (userName !== null); {
     $.getJSON('http://api.open-notify.org/astros.json', function (data) {
         var people = data['number']
-        alert("Hello, " + userName + "! There are currently " + people + " in space! Wild!")
+        alert("Hello, " + userName + "! There are currently " + people + " people in space! Wild!")
     },
     )
 }
