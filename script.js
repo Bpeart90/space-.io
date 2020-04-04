@@ -1,8 +1,16 @@
 //javascript for website functionality
-console.log("hey lmao")
 
-var userName = localStorage.getItem(userName);
+var userName = localStorage.getItem("userName");
+console.log(userName)
 
+if (userName === null) {
+    userName = prompt("Hello! What is your name?")
+    var id = "userName"
+    var value = userName
+    localStorage.setItem(id, value);
+} else (userName !== null); {
+    alert("Hello, " + userName + "!");
+}
 //calendar functionality; gets today's date on page load
 var today = getToday()
 function getToday() {
