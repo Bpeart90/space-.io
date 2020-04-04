@@ -3,18 +3,25 @@
 var userName = localStorage.getItem("userName");
 console.log(userName)
 
-if (userName === null) {
-    userName = prompt("Hello! What is your name?")
+$("#userNameBtn").on("click", function () {
+    console.log("yup")
+    userName = $("#userName").val()
     var id = "userName"
     var value = userName
     localStorage.setItem(id, value);
-} else (userName !== null); {
+}
+)
+
+if (userName !== null) {
+    console.log(userName)
+    $(".is-invisible").removeClass("is-invisible")
+    $("#hello").addClass("is-invisible")
     $.getJSON('http://api.open-notify.org/astros.json', function (data) {
         var people = data['number']
-        alert("Hello, " + userName + "! There are currently " + people + " people in space! Wild!")
-    },
-    )
+        $("#welcomeMessage").text("Welcome, " + userName + "! There are currently " + people + " people in space! Wow!")
+    })
 }
+
 //calendar functionality; gets today's date on page load
 var today = getToday()
 function getToday() {
@@ -29,3 +36,4 @@ $("#picSearchBtn").on("click", function () {
     picDate = $("#picDate").val()
     console.log(picDate)
 })
+
