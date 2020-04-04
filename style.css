@@ -1,1 +1,12 @@
 /*This a starting template for this project*/
+.card {
+  align-content: center;
+  background-color: white;
+}
+body {
+  background-image: url("stars.jpg");
+  background-repeat: repeat;
+  background-position: top center !important;
+  background-size: 400px;
+  background-attachment: fixed;
+}
