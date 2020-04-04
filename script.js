@@ -9,7 +9,11 @@ if (userName === null) {
     var value = userName
     localStorage.setItem(id, value);
 } else (userName !== null); {
-    alert("Hello, " + userName + "!");
+    $.getJSON('http://api.open-notify.org/astros.json', function (data) {
+        var people = data['number']
+        alert("Hello, " + userName + "! There are currently " + people + " in space! Wild!")
+    },
+    )
 }
 //calendar functionality; gets today's date on page load
 var today = getToday()
