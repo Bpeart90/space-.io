@@ -40,6 +40,7 @@ function getToday() {
     console.log(picDate);
     getPicture()
 }
+
 //asteroid
 var key = "GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI";
 var now = moment().format();
@@ -84,7 +85,6 @@ $("#picSearchBtn").on("click", function () {
     picDate = $("#picDate").val();
     console.log(picDate);
     $(".is-hidden").removeClass("is-hidden");
-
     getPicture(picDate);
 });
 
