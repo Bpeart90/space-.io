@@ -38,6 +38,7 @@ function getToday() {
     $("#picDate").val(picDate);
     $("#picDate").attr("max", picDate);
     console.log(picDate);
+    getPicture()
 }
 //asteroid
 var key = 'GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI'
