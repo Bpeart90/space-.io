@@ -43,16 +43,26 @@ function getToday() {
 $("#picSearchBtn").on("click", function () {
   picDate = $("#picDate").val();
   console.log(picDate);
+
+  getPicture(picDate);
 });
 
-var apiKey = "GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI";
-var spacePicture = "https://api.nasa.gov/planetary/apod?api_key=" + apiKey;
+function getPicture() {
+  var apiKey = "GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI";
+  var spacePicture =
+    "https://api.nasa.gov/planetary/apod?api_key=" +
+    apiKey +
+    "&date=" +
+    picDate;
 
-$.ajax({
-  url: spacePicture,
-  method: "GET",
-}).then(function (response) {
-  console.log(response);
+  $.ajax({
+    url: spacePicture,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
 
-  $("#spacePicture").attr("src", response.hdurl);
-});
+    $("#spacePicture").attr("src", response.hdurl);
+    $("#spacePictureTitle").html(response.title);
+    $("#spacePictureCopyright").html("By: " + response.copyright);
+  });
+}
