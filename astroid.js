@@ -1,8 +1,8 @@
 var key = 'GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI'
-var startDate = $("#startDate").val();
-var endDate = $("#endDate").val();
-var queryURL = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=" + key;
 function displayData() {
+    var startDate = $("#startDate").val();
+    var endDate = $("#endDate").val();
+    var queryURL = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + startDate + "&end_date=" + endDate + "&api_key=" + key;
     console.log(startDate)
     console.log(endDate)
     $.ajax({
@@ -56,13 +56,13 @@ var createRow = function (response) {
     $("tbody").append(tRow);
 };
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function (reponse) {
-    var results = '#results'
+// $.ajax({
+//     url: queryURL,
+//     method: "GET"
+// }).then(function (reponse) {
+//     var results = '#results'
 
-})
+// })
 
 
 $("#searchBtn").on("click", function () {
