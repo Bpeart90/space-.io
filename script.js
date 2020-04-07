@@ -40,3 +40,25 @@ $("#picSearchBtn").on("click", function () {
     console.log(picDate)
 })
 
+var key = 'GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI'
+var today = moment().format();
+var date = today.slice(0, 10)
+var queryURL = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + date + "&end_date=" + date + "&api_key=" + key;
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+    .then(function (response) {
+        for (const key in response.near_earth_objects) {
+            if (response.near_earth_objects.hasOwnProperty(key)) {
+                const element = response.near_earth_objects[key];
+                for (var i = 0; i < element.length; i++) {
+                    if (element[i].is_potentially_hazardous_asteroid = true) {
+                        var asteroidName = element[i].name
+                        console.log(asteroidName)
+                        break;
+                    }
+                }
+            }
+        }
+    })
