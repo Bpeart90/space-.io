@@ -105,5 +105,8 @@ function getPicture() {
         $("#spacePicture").attr("src", response.hdurl);
         $("#spacePictureTitle").html(response.title);
         $("#spacePictureCopyright").html("By: " + response.copyright);
+        if (response.copyright === undefined) {
+            $("#spacePictureCopyright").html("")
+        }
     });
 }
