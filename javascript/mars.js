@@ -28,7 +28,8 @@ $.ajax({
             var averageTd = $("<td>").text(average_value);
             var wind_val = current_mars.WD.most_common.compass_degrees.toString();
             var windTd = $("<td>").text(wind_val);
-
+            console.log(degree_value)
+            console.log(wind_val)
 
 
 

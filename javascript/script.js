@@ -1,5 +1,6 @@
 //javascript for website functionality
 
+//user name gathering
 var userName = localStorage.getItem("userName");
 console.log(userName);
 
@@ -12,6 +13,7 @@ $("#userNameBtn").on("click", function () {
     loadPage();
 });
 
+//welcome message load and number of space count
 if (userName !== null) {
     loadPage();
 }
@@ -29,6 +31,7 @@ function loadPage() {
             " people in space! Wow!"
         );
     });
+    marsWeather()
 }
 //calendar functionality; gets today's date on page load
 var today = getToday();
@@ -40,8 +43,7 @@ function getToday() {
     console.log(picDate);
     getPicture()
 }
-
-//asteroid
+//asteroid data
 var key = "GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI";
 var now = moment().format();
 var date = now.slice(0, 10);
@@ -80,7 +82,6 @@ $.ajax({
         }
     }
 });
-
 //image search; today is set as max date
 $("#picSearchBtn").on("click", function () {
     picDate = $("#picDate").val();
@@ -109,4 +110,25 @@ function getPicture() {
             $("#spacePictureCopyright").html("")
         }
     });
+}
+
+function marsWeather() {
+    var key = 'GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI';
+    var queryURL = `https://api.nasa.gov/insight_weather/?api_key=${key}&feedtype=json&ver=1.0`
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+        .then(function (response) {
+            for (var i = 0; i < response.sol_keys.length; i++) {
+                let current_mars = response[response.sol_keys[i]]
+                var season = current_mars.Season;
+                var degree_value = current_mars.AT.av
+                var average_value = current_mars.HWS.av
+                var temp = degree_value.toFixed(0)
+                var wind = average_value.toFixed(0)
+                var marsWeather = "It is currently " + temp + " F, and the wind is blowing at " + wind + " m/s on this lovely Martian " + season + " day."
+                $("#marsMessage").text(marsWeather)
+            }
+        })
 }
