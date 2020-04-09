@@ -14,16 +14,16 @@ body {
 
 .container {
   background-color: black;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .card {
   color: white;
   margin: auto;
-  width: 80%;
+  width: 95%;
   align-items: center;
   background-color: black;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
 }
 #spacePictureTitle {

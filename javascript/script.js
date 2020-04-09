@@ -63,8 +63,8 @@ $.ajax({
                 if ((element[i].is_potentially_hazardous_asteroid = true)) {
                     var asteroidName = element[i].name;
                     var velocity =
-                        element[i].close_approach_data[0].relative_velocity.miles_per_hour;
-                    var asteroidSpeed = velocity
+                        parseInt(element[i].close_approach_data[0].relative_velocity.miles_per_hour)
+                    var asteroidSpeed = velocity.toFixed(0)
                     console.log(asteroidName);
                     console.log(asteroidSpeed);
                     $("#asteroidMessage").text(
