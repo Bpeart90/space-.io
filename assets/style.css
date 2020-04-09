@@ -13,16 +13,19 @@ body {
 }
 
 .container {
-    background-color: black;
-    max-width: 960px;
+  background-color: black;
+  max-width: 600px;
 }
 
 .card {
-    color: white;
-    margin: auto;
-    width: 50%;
-    align-items: center;
-    background-color: black;
-    padding: 20px;
-    border-radius: 10px;
+  color: white;
+  margin: auto;
+  width: 80%;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+}
+#spacePictureTitle {
+  font-size: 40px;
 }
