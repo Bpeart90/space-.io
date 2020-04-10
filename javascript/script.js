@@ -112,6 +112,7 @@ function getPicture() {
     });
 }
 
+//martian weather report
 function marsWeather() {
     var key = 'GyVgshN3v3SVDt3X0WG5iO6kaaDcbLm5HGCbZOWI';
     var queryURL = `https://api.nasa.gov/insight_weather/?api_key=${key}&feedtype=json&ver=1.0`

@@ -12,8 +12,20 @@ body {
   font-size: 60px;
 }
 
+table {
+  border-spacing: 80px;
+}
+
+th {
+  width: 150px
+}
+
+a {
+  font-size: 12px
+}
 .container {
   background-color: black;
+  color: white;
   max-width: 600px;
 }
 

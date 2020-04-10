@@ -10,6 +10,7 @@ function displayData() {
         method: "GET"
     })
         .then(function (response) {
+            $(".is-invisible").removeClass("is-invisible");
             console.log(response);
             console.log(response.element_count);
             console.log(response.near_earth_objects)
@@ -24,16 +25,18 @@ function displayData() {
 
                         var titleTd = $("<td>").text(element[i].name);
                         var dateTd = $("<td>").text(element[i].close_approach_data[0].close_approach_date);
-                        var sizTd = $("<td>").text(element[i].absolute_magnitude_h);
-
-                        var fatalTd = $("<td>").text(element[i].is_potentially_hazardous_asteroid);
+                        if (element[i].is_potentially_hazardous_asteroid === true) {
+                            var fatalTd = $("<td>").text("Yes!");
+                        }
+                        else {
+                            var fatalTd = $("<td>").text("Nope!");
+                        }
 
 
 
 
                         tRow.append(titleTd);
                         tRow.append(dateTd);
-                        tRow.append(sizTd)
                         tRow.append(fatalTd);
                         $("tbody").append(tRow);
                     }

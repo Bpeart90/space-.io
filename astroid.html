@@ -1,93 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <title>Document</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="assets/style.css" />
+  <title>Nearest Asteroids</title>
+</head>
+
+<body>
+
+  <div align="center" class="container">
     <header>
-      <div class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand">
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <h1 style="text-align: center;">Nearest Astroid</h1>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </div>
+      <h1 align="center" class="title">Nearest Asteroids</h1>
     </header>
+    <div class="section">
+      <h4>Use the forms below to search for the nearest asteroids by date of nearest approach. The start and end date
+        must be within seven days of each other. We will let you know if you should have worried about this one
+        potentially hitting our beloved Earth.</h4>
+      <hr>
+      <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input class="form-control" id="startDate" placeholder="yyyy-mm-dd" />
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input class="form-control" id="endDate" placeholder="yyyy-mm-dd" />
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="searchBtn">
+          Search
+        </button>
+      </div>
+      <br>
+      <button type="reset" class="btn btn-secondary" id="resetBtn">
+        Reset
+      </button>
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="startDate">Start Date</label>
-          <input class="form-control" id="startDate" placeholder="yyyy-mm-dd" />
-        </div>
+  <div align="center" class="container is-invisible">
+    <hr>
+    <!--Empty div for results-->
+    <div class="section">
+      <div id="results">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Closest On</th>
+              <th>Should I have worried?</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="endDate"
-            >End Date (the end date should be within seven days of the start
-            date)</label
-          >
-          <input class="form-control" id="endDate" placeholder="yyyy-mm-dd" />
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-1">
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary" id="searchBtn">
-            Search
-          </button>
-        </div>
-      </div>
-      <div class="col-md-1">
-        <div class="form-group">
-          <button type="reset" class="btn btn-secondary" id="resetBtn">
-            Reset
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12" id="search-paramaters">
-          <p id="bold">Astroids</p>
-        </div>
-      </div>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="javascript/astroid.js"></script>
+</body>
 
-      <!--Empty div for results-->
-      <div class="row">
-        <div class="col-md-12" id="results">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Size</th>
-                <th>Impact</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="javascript/astroid.js"></script>
-  </body>
 </html>
