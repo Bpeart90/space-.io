@@ -13,7 +13,7 @@ $("#userNameBtn").on("click", function () {
     loadPage();
 });
 
-//welcome message load and number of space count
+//welcome message load and number of space count; API call for number of people in space made into comment for demo purposes
 if (userName !== null) {
     loadPage();
 }
@@ -21,16 +21,14 @@ function loadPage() {
     console.log(userName);
     $(".is-invisible").removeClass("is-invisible");
     $("#hello").html('<h4 id="welcomeMessage"></h4>');
-    $.getJSON("http://api.open-notify.org/astros.json", function (data) {
-        var people = data["number"];
-        $("#welcomeMessage").text(
-            "Welcome, " +
-            userName +
-            "! There are currently " +
-            people +
-            " people in space! Wow!"
-        );
-    });
+    // $.getJSON("http://api.open-notify.org/astros.json", function (data) {
+    //     var people = data["number"];
+    $("#welcomeMessage").text(
+        "Welcome, " +
+        userName +
+        "! There are currently 6 people in space! Wow!"
+    );
+    // });
     marsWeather()
 }
 //calendar functionality; gets today's date on page load
